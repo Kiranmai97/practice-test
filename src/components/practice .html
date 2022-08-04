@@ -1,0 +1,111 @@
+<script>
+//     number *4*4*4*4
+//     var num = 34;
+// var digits = num.toString().split('');
+// var arr = digits.map(Number)
+// console.log(arr);
+// let result = 0 
+// for(i=0;i<=arr.length-1;i++)
+// {
+//     let sum = arr[i]*arr[i]*arr[i]*arr[i]
+//     console.log(sum)
+//  result+= sum
+// }
+// console.log(result)
+
+
+//  in how many ways a number can be divisible
+// let value=28
+//  for(let i=0;i<=value;i++){
+//      if(value%i==0){
+//          console.log(i)
+//      }
+//  }
+
+//  let value=496
+//  let result = 0;
+//  for(let i=1;i<=value;i++){
+//      if(value%i==0){
+//          console.log(i)
+//      result+=i
+//     //  console.log(result)
+//      if(result = value){
+//         //  console.log('val')
+//      }else{
+//           console.log('result')
+//      }
+//      }
+//  }
+
+// Find out whether the given two numbers n1 and n2 are mirrors. Two numbers are said to be so mirrors if each sum of divisors is equal to the other number.
+// Ex. 220 and 284 are mirrors
+
+// Divisors of 220 = 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110
+
+// 1+2+4+5+10+11+20+22+44+55+110=284
+
+// Divisors of 284 = 1, 2, 7, 71, 142
+
+// 1+2+7+71+142=220
+
+// Hence, 220 and 284 are called mirrors.
+
+
+var a = 300;
+        var sum = 0
+        var result = 0;
+        for (let i = 0; i < a; i++) {
+            if (a % i == 0) {
+                // console.log("mirror",i)
+                result = result + i;
+            }
+        }
+        for (let j = 0; j < result; j++) {
+            if (result % j == 0) {
+                // console.log("not Mirror",j)
+                sum = sum + j;
+            }
+        }
+        if (a == sum) {
+            console.log("It is a Mirror")
+        } else {
+            console.log("It is not a mirror")
+        }
+        console.log("total", result)
+        console.log("total", sum)
+    
+
+// 1. Find out whether the given number n is transparent or not. A number is transparent if it satisfies the below conditions
+// a. No. of digits of n should be even.
+// b. Divide the number from the middle
+// c. Sum two parts
+// d. Square the sum of two parts
+
+// Ex: n = 2025
+// a. No. of digits of n should be even - 4
+// b. Divide the number into two parts from the middle - 20 and 25
+// c. Sum two parts - 20+25 = 45
+// d. Square the sum of two parts - 45 * 45 = 2025
+// So given n == output, hence n is transparent.
+
+var n = 2025
+var arr = n.toString().split('');
+var arr1 = arr.map(Number)
+console.log(arr1)
+//checks whether the string is a number or not if we ARE giving a  hi string it will show the o/p as a nan
+let val= arr1.length/2
+//   console.log(val) 
+  let firstDigit = parseInt(n / 100)
+// console.log(firstDigit)
+ let lastdigit = n % 100
+// console.log(lastdigit)
+let sum = firstDigit + lastdigit
+// console.log(sum)
+let result = sum*sum
+// console.log(result)
+if(n=sum){
+    console.log("n is transparent")
+}else{
+    console.log("n is not transparent")
+}
+</script>
