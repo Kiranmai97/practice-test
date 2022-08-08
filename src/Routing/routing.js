@@ -13,6 +13,8 @@ import Find from "../components/practice";
 import Duplicates from "../components/duplicates";
 import Unique from "../components/unique";
 import Valid from "../components/valid";
+import Sorting from "../components/sorting";
+import Axios from "../components/axios";
 
 function Routing() {
     return(
@@ -32,6 +34,8 @@ function Routing() {
                 <Route path="/duplicates" element={<Duplicates/>}/>
                 <Route path="/unique" element={<Unique/>}/>
                 <Route path="/valid" element={<Valid/>}/>
+                <Route path="/sort" element={<Sorting/>}/>
+                <Route path="/axios" element={<Axios/>}/>
                 </Routes>
                 </BrowserRouter>
         </div>
