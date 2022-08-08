@@ -189,15 +189,6 @@ function Sorting() {
             },
         ]
     })
-    const [page, setPage] = useState({
-        newArr: [],
-        total:[]
-    })
-
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postPage, setPostPage] = useState(5);
-
-
 
 
     const handleUp = (e) => {
@@ -213,29 +204,28 @@ function Sorting() {
         console.log('arr', arr)
         setState({ ...state, arr: arr })
     }
-    let pages = state.users
-    console.log("pages", pages)
 
-    let newArr = [];
-    const total = newArr;
-    console.log(total)
-    const currentSlide = () => {
-        // console.log("slided")
-        for (let i = 0; i <= state.users.length; i++) {
-            let array = state.users.length / 5
-            console.log(parseInt(array))
-            console.log('array',array)
-        }
-        const lastIndex = currentPage * postPage;
-        const firstIndex = lastIndex - postPage;
-        const newArr = state.users.slice(firstIndex, lastIndex);
-        console.log("newArr", newArr)
-    }
-    setPage({...page,newArr:newArr})
-    const plusSlides = () => {
+    const [page, setPage] = useState({
+        pages: [],
+        array: []
+    })
 
-        console.log("slided")
+   
+    
+  
+    const currentSlide = (e) => {
+        let newArr = []
+        for (let i=0;i<state.users.length-1;i++){
+                 let array=state.users.splice(0,5)
+                 newArr.push(array) 
+              console.log(newArr)
+              }
+        setPage({ ...page, pages: e.target.background = "active #ddd" })
     }
+    const plusSlides=()=>{
+
+    }
+
 
     return (
         <div>

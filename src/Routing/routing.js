@@ -14,6 +14,9 @@ import Duplicates from "../components/duplicates";
 import Unique from "../components/unique";
 import Valid from "../components/valid";
 import Sorting from "../components/sorting";
+import Axios from "../components/axios";
+import Fetch from "../components/fetch";
+import Hooks from "../components/updating";
 
 function Routing() {
     return(
@@ -34,6 +37,9 @@ function Routing() {
                 <Route path="/unique" element={<Unique/>}/>
                 <Route path="/valid" element={<Valid/>}/>
                 <Route path="/sort" element={<Sorting/>}/>
+                <Route path="/axios" element={<Axios/>}/>
+                <Route path="/fetch" element={<Fetch/>}/>
+                <Route path="/hooks" element={<Hooks/>}/>
                 </Routes>
                 </BrowserRouter>
         </div>
