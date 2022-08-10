@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import up_arrow from "../icons/up_arrow.svg";
 import down_arrow from '../icons/down_arrow.svg';
+import './components.css'
 
 
 function Axios() {
@@ -49,13 +50,12 @@ function Axios() {
         <div>
             <Table className="container">
                 <thead>
-                    <tr>
-                        <th>Id{<img src={up_arrow} alt="up_arrow" onClick={handleUp} />}{<img src={down_arrow} alt="uo_arrow" onClick={handleDown} />}</th>
-                        <th>FirstName{<img src={up_arrow} alt="up_arrow" onClick={handleUp} />}{<img src={down_arrow} alt="uo_arrow" onClick={handleDown} />}</th>
-                        <th>LastName{<img src={up_arrow} alt="up_arrow" onClick={handleUp} />}{<img src={down_arrow} alt="uo_arrow" onClick={handleDown} />}</th>
-                        <th>Email{<img src={up_arrow} alt="up_arrow" onClick={handleUp} />}{<img src={down_arrow} alt="uo_arrow" onClick={handleDown} />}</th>
-                        <th>Avatar{<img src={up_arrow} alt="up_arrow" onClick={handleUp} />}{<img src={down_arrow} alt="uo_arrow" onClick={handleDown} />}</th>
-
+                <tr>
+                        <th>Id</th>
+                        <th>FirstName{<img src={up_arrow} alt="up-arrow" onClick={handleUp}  className = "up_arrow"/>}{<img src={down_arrow} alt="down-arrow" onClick={handleDown}  className = "down_arrow" />}</th>
+                        <th>LastName{<img src={up_arrow} alt="up-arrow" onClick={handleUp} className = "up_arrow" />}{<img src={down_arrow} alt="down-arrow" onClick={handleDown}  className = "down_arrow"/>}</th>
+                        <th>Email{<img src={up_arrow} alt="up-arrow" onClick={handleUp} className = "up_arrow" />}{<img src={down_arrow} alt="down-arrow" onClick={handleDown}  className = "down_arrow"/>}</th>
+                        <th>Avatar{<img src={up_arrow} alt="up-arrow" onClick={handleUp}  className = "up_arrow"/>}{<img src={down_arrow} alt="down-arrow" onClick={handleDown}  className = "down_arrow"/>}</th>
                     </tr>
                 </thead>
                 <tbody>
