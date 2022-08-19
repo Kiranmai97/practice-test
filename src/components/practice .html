@@ -53,28 +53,28 @@
 
 
 
-var a = 300;
-        var sum = 0
-        var result = 0;
-        for (let i = 0; i < a; i++) {
-            if (a % i == 0) {
-                // console.log("mirror",i)
-                result = result + i;
-            }
-        }
-        for (let j = 0; j < result; j++) {
-            if (result % j == 0) {
-                // console.log("not Mirror",j)
-                sum = sum + j;
-            }
-        }
-        if (a == sum) {
-            console.log("It is a Mirror")
-        } else {
-            console.log("It is not a mirror")
-        }
-        console.log("total", result)
-        console.log("total", sum)
+// var a = 300;
+//         var sum = 0
+//         var result = 0;
+//         for (let i = 0; i < a; i++) {
+//             if (a % i == 0) {
+//                 // console.log("mirror",i)
+//                 result = result + i;
+//             }
+//         }
+//         for (let j = 0; j < result; j++) {
+//             if (result % j == 0) {
+//                 // console.log("not Mirror",j)
+//                 sum = sum + j;
+//             }
+//         }
+//         if (a == sum) {
+//             console.log("It is a Mirror")
+//         } else {
+//             console.log("It is not a mirror")
+//         }
+//         console.log("total", result)
+//         console.log("total", sum)
     
 
 // 1. Find out whether the given number n is transparent or not. A number is transparent if it satisfies the below conditions
@@ -90,24 +90,42 @@ var a = 300;
 // d. Square the sum of two parts - 45 * 45 = 2025
 // So given n == output, hence n is transparent.
 
-var n = 2025
-var arr = n.toString().split('');
-var arr1 = arr.map(Number)
-console.log(arr1)
-//checks whether the string is a number or not if we ARE giving a  hi string it will show the o/p as a nan
-let val= arr1.length/2
-//   console.log(val) 
-  let firstDigit = parseInt(n / 100)
-// console.log(firstDigit)
- let lastdigit = n % 100
-// console.log(lastdigit)
-let sum = firstDigit + lastdigit
-// console.log(sum)
-let result = sum*sum
-// console.log(result)
-if(n=sum){
-    console.log("n is transparent")
-}else{
-    console.log("n is not transparent")
+// var n = 2025
+// var arr = n.toString().split('');
+// var arr1 = arr.map(Number)
+// console.log(arr1)
+// //checks whether the string is a number or not if we ARE giving a  hi string it will show the o/p as a nan
+// let val= arr1.length/2
+// //   console.log(val) 
+//   let firstDigit = parseInt(n / 100)
+// // console.log(firstDigit)
+//  let lastdigit = n % 100
+// // console.log(lastdigit)
+// let sum = firstDigit + lastdigit
+// // console.log(sum)
+// let result = sum*sum
+// // console.log(result)
+// if(n=sum){
+//     console.log("n is transparent")
+// }else{
+//     console.log("n is not transparent")
+// }
+
+const App = () => {
+
+let disabled = false;
+let type = "text";
+let name = "address";
+
+const user = {
+    role: 'Student',
+    name: 'John',
+}
+
+if(user.role === 'Student') {
+    disabled = true;
+}
+
+return <input type={type} name={name} disabled={disabled}/>;
 }
 </script>

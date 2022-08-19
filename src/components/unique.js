@@ -38,7 +38,7 @@ function Unique() {
 
             }
             // count = 0;
-setState({...state, list: list, count:count})
+            setState({ ...state, list: list, count: count })
         }
 
 

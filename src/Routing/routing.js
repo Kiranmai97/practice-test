@@ -8,7 +8,6 @@ import Password from "../components/password";
 import Search from "../components/search";
 import TableList from "../components/table";
 import Mirror from "../components/mirror";
-// import { Stringpb } from "../components/string";
 import Find from "../components/practice";
 import Duplicates from "../components/duplicates";
 import Unique from "../components/unique";
@@ -17,6 +16,9 @@ import Sorting from "../components/sorting";
 import Axios from "../components/axios";
 import Fetch from "../components/fetch";
 import Hooks from "../components/updating";
+import Sample from "../components/sample";
+import Propsuser from "../components/propsuser";
+import TextUpper from "../components/textupper";
 
 
 
@@ -34,7 +36,6 @@ function Routing() {
                     <Route path="/pswd" element={<Password />} />
                     <Route path="/search" element={<Search />} />
                     <Route path="/aug02" element={<Mirror />} />
-                    {/* <Route path="/string" element={<Stringpb/>}/> */}
                     <Route path="/find" element={<Find />} />
                     <Route path="/duplicates" element={<Duplicates />} />
                     <Route path="/unique" element={<Unique />} />
@@ -43,6 +44,9 @@ function Routing() {
                     <Route path="/axios" element={<Axios />} />
                     <Route path="/fetch" element={<Fetch />} />
                     <Route path="/hooks" element={<Hooks />} />
+                    <Route path="/sample" element={<Sample />} />
+                    <Route path="/props" element={<Propsuser/>}/>
+                    <Route path="/text" element={<TextUpper/>}/>
 
 
                 </Routes>
