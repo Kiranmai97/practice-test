@@ -1,33 +1,66 @@
 import React, { useState } from "react";
+import './design.css';
+
 
 function Password() {
+    const [state, setState] = useState({
+        password: '',
+        weak: false,
+        average: false,
+        strong: false,
+        passwordErrorMgs: "",
+    })
 
-    const [password, setPassword] = useState("");
+    
+    const handleInputChange = (e) => {
+        setState({ ...state, password: e.target.value })
+    }
 
+    const Button = () => {
+     
 
-    const handleInputchange = (e) => {
-        setPassword( e.target.value.trim())
+      
+        let passwordresult = [];
+        passwordresult.push(state.password)
+        console.log("password", passwordresult)
+        if (state.password.match(/^[A-Za-z]+$/) || (state.password.match(/^[0-9]/))|| (state.password.match(/^[!@#$&*]/))) {
+            setState({ ...state, passwordErrorMgs:"This is a Weak Password",  weak : true,average : false,   strong :false })
+           
+        } else if (state.password.match(/^[A-Za-z]+[0-9]/)||(state.password.match(/^[A-Za-z]*[!@#$&*]/))) {
+            setState({ ...state, passwordErrorMgs:"This is a average Password",  weak : false,average : true,   strong :false })
+        
+        } else if (state.password.match(/^[a-zA-Z0-9!@#$%^&*]{6,16}$/)) {
+            setState({ ...state, passwordErrorMgs:"This is a Strong password",  weak : false,average : false,   strong :true })
+        }
 
+        
     }
 
     return (
+        <div>
+            <div>{JSON.stringify(state)}</div>
 
-        <div className="container">
-            <form>
-                <label>field:</label>
-                <input type="password"
-                    name="field"
-                    placeholder="password"
-                    value={password}
-                    onChange={handleInputchange}>
-                </input>
+            <label>Enter :</label>
 
-            </form>
+            <input type="password" name="field" placeholder="password" value={state.password} onChange={handleInputChange} />
+            <button type="submit" name="submit" onClick={Button} >Button </button>
+
             {
-                <p>Entered password is:{password}</p>
+                state.password && <h3>{state.password}</h3>
             }
+            {
+                state.weak && <div  className='weak'>{state.passwordErrorMgs}</div>
+            }
+            {
+                state.strong && <div className='strong'>{state.passwordErrorMgs}</div>
+            }
+            {
+                state.average && <div className='avg'>{state.passwordErrorMgs}</div>
+            }
+         
+
+
         </div>
     );
-
 }
 export default Password;

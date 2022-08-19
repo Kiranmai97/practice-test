@@ -1,0 +1,39 @@
+.topnav{
+    border:1px solid ;
+}
+.linechart{
+    height: 100% !important;
+    width: 40% !important;
+
+}
+.piechart {
+    height: 230px !important;
+    width: 300px !important;
+}
+.barchart {
+    height: 100% !important;
+    width: 40% !important;
+}
+.charts{
+    display:flex !important;
+
+}
+.h2h3 {
+    color: blue;
+}
+
+.weak{
+    background-color: red;
+    width:20%;
+    margin-left:10px;
+}
+.avg {
+    background-color: yellow;
+    width:20%;
+    margin-left:10px;
+}
+.strong {
+    background-color: green;
+    width:20%;
+    margin-left:10px; 
+}
