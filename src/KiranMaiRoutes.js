@@ -12,6 +12,7 @@ import TableData from "./Kiranmai/tableData";
 import Timer from "./Kiranmai/Timer";
 
 
+
 const KiranMaiRoutes = () => {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ const KiranMaiRoutes = () => {
         <Route path="/timer" element={<Timer/>}/>
         <Route path="/chart" element={<ChartBox/>}/>
         <Route path="/password" element={<Password/>}/>
+        
 
 
 

@@ -1,0 +1,76 @@
+/* .container {
+    margin-top: 10px;
+} */
+.h4 {
+    display: flex;
+    justify-content: center !important;
+    background-color: pink;
+    width: 20%;
+    border-radius: 17px;
+    margin-left: 40%;
+    margin-top: 25px;
+}
+.homePage {
+    background-image: url("../Task/Images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 100vw;
+}
+.btn {
+     margin-left: 40px;
+     margin-top: 10px;;
+}
+.home {
+
+    padding-top: 20px;
+    margin-left: 10% !important;
+}
+.input,select {
+    width: 35%;
+    border-radius: 8px;
+}
+.date {
+    padding-top: 20px;
+    margin-left: 10% !important;
+ 
+}
+.description {
+    height: 100px;
+    width: 35%;
+    border-radius: 8px;
+}
+.addbtn {
+    margin-left: 30px; 
+}
+.grid{
+    display: flex;
+}
+.project{
+    margin-top: 17rem;
+    margin-left: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 180px;
+}
+
+
+.pre{
+    background: url(../Task/Images/test.jpeg) no-repeat;
+    height: 190px;
+    width: 270px;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    text-decoration: none;
+}
+.btns {
+    color: antiquewhite;
+    text-decoration:none ;
+}
+.prespan {
+    text-decoration: none;
+    margin-top: 50px;
+    margin-left: 50px !important;
+}

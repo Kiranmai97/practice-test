@@ -1,0 +1,111 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            max-width:100%;
+            height:auto;
+        }
+
+        div:first-child div {
+            border: 3px solid purple;
+            width: 150px;
+            height: 150px;
+        }
+
+        div:first-child div div {
+            border: 1px solid yellow;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        div:first-child div div div {
+            border: 3px solid rgb(10, 10, 10);
+            width: 50px;
+            height: 50px;
+        }
+      
+
+        #hello .hello-in {
+            color: red;
+        }
+
+        .hello-in:not(#f) {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+   
+    <script>
+        function Chnage() {
+            let val = document.getElementById('elementcolor')
+            val.style.backgroundColor = 'red'
+        }
+        function Change() {
+            let val = document.getElementById('elementcolor')
+            val.style.backgroundColor = 'black'
+        }
+    </script>
+    <div>
+        <div id="elementcolor">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="hello">
+        <div class="hello-in">
+            Hello I am red
+        </div>
+    </div>
+
+    <div>
+        <a href="https:\\www.fb.com" ><img src = "https://www.fb.com\rose.jpg" alt="rose"/></a>
+        
+<div> <a href="https://www.w3schools.com"> <img src="https://www.w3schools.com/images.jpg"></img></a></div>
+    </div>
+    
+
+
+
+
+
+    <button onClick='Change()'> Hi</button>
+    </div>
+    <button onclick='Chnage()'>click</button>
+</body>
+
+</html> -->
+
+
+<label for="accept">
+    <input type="checkbox" id="accept" name="accept"> Accept
+</label>
+
+<button id="btn">Submit</button>
+<script>
+    const cb = document.querySelector('#accept');
+    const btn = document.querySelector('#btn');
+    btn.onclick = () => {
+       alert(cb.value);
+    };
+</script>
