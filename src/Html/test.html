@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div:first-child div{
+        border: 1px solid black;
+        height:300px;
+        width:300px;
+        justify-content: center;
+        align-items: center;
+        display: flex; 
+    }
+    div:first-child div div{
+        border: 1px solid black;
+        height:200px;
+        width:200px;
+    }
+    div:first-child div div div{
+        border: 1px solid black;
+        height:100px;
+        width:100px;
+    }
+    body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height:100vh;
+        width:100%;
+
+    }
+
+</style>
+</head>
+<body>
+    <div>
+        <div>
+            <div>
+                <div id = 'element' onclick="Change()">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function Change() {
+            document.getElementById("element").innerHTML = "Roja";
+        }
+    </script>
+</body>
+</html>

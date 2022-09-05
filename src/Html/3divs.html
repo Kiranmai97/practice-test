@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREE DIVS</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        div:first-child div {
+            border: 1px solid yellow;
+            height: 150px;
+            width: 150px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        div:first-child div div {
+            border: 1px solid blue;
+            height: 100px;
+            width: 100px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        div:first-child div div div {
+            border: 1px solid green;
+            height: 50px;
+            width: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="ghi" onclick="three()">
+            <div id="def" onclick="two()">
+                <div id="abc" onclick="one()" >
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div onclick="off()"></div>
+    <script>
+        function one() {
+            let val = document.getElementById('abc')
+            val.style.border = "2px dashed pink"
+         }
+         function two(){
+            let val = document.getElementById('def')
+            val.style.border = "2px dotted red"
+         }
+         function three(){
+            let val= document.getElementById('ghi')
+            val.style.border = "2px solid black"
+         }
+      
+       
+    </script>
+</body>
+
+</html>
