@@ -32,6 +32,7 @@ const ProProject = () => {
       <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
       <Button className="addbtn"> <a href="/pre" className='btns'>Pre </a></Button>
       <Button className="addbtn"> <a href="/test" className='btns'>Test </a></Button>
+      <hr/>
       <Table>
           <thead>
             <tr>

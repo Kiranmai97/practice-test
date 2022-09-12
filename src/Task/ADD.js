@@ -4,12 +4,12 @@ import "./design.css";
 
 const ADD = () => {
 
- 
+
   return (
     <div>
       <h4 className='h4'>Add A Project</h4>
       <div className='homePage'>
-        
+
         <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
         <hr></hr>
         <div className='home'>
@@ -18,7 +18,7 @@ const ADD = () => {
         </div>
         <div className='date'>
           <label>Release Date</label>
-          <div><input type="date" className='input'  /></div>
+          <div><input type="date" className='input' /></div>
         </div>
 
         <div className='home'>
@@ -27,31 +27,26 @@ const ADD = () => {
         </div>
         <div className='home'>
           <label>Status</label>
-          <div>
-            <select name="cars" id="cars" className='select'>
-              <option value="select">--Select--</option>
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
-            </select>
-          </div>
+          <div><select name='description' className='select' >
+            <option value='' selected="true" disabled="disabled">--Select--</option>
+            <option value=''> PRE  </option>
+            <option value=''> PRO </option>
+          </select></div>
         </div>
         <div className='home'>
           <label>Environment</label>
-          <div>
-            <select name="bikes" id="bikes" className='select'>
-              <option value="select">--Select--</option>
-              <option value="bullet">Bullet</option>
-              <option value="passion">Passion</option>
-              <option value="suzuki">suzuki</option>
-              <option value="audi">Audi</option>
-            </select>
-          </div>
+          <div> <select name='description' className='select'>
+            <option value='' selected="true" disabled="disabled" >--Select--</option>
+            <option value=''> PRE </option>
+            <option value=''> PRO </option>
+          </select></div>
         </div>
-        <div>       <Button className="addbtn"> <a href="/add" className='btns'>Add </a></Button></div>
+
+        <div>
+          <Button className="addbtn"> <a href="/add" className='btns'>Add </a></Button></div>
       </div>
     </div>
+
   )
 }
 

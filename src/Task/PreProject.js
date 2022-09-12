@@ -30,11 +30,12 @@ const PreProject = () => {
       <div className='homePage'>
 
         <Button className="addbtn"> <a href="/add" className='btns'>Add </a></Button>
-        <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
+        <Button className="addbtn"> <a href="/home"className='btns'>Home </a></Button>
         <Button className="addbtn"> <a href="/pro" className='btns'>Pro </a></Button>
-        <Button className="addbtn"> <a href="/test" className='btns'>Test </a></Button>
+        <Button className="addbtn"> <a href="/test"className='btns'>Test </a></Button>
     
       <div>
+        <hr/>
         <Table>
           <thead>
             <tr>

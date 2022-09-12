@@ -24,6 +24,7 @@ import ProProject from "../Task/proProject";
 import PreProject from "../Task/PreProject";
 import Test from "../Task/test";
 import Home from "../Task/Home";
+import Project_management from "../Task/example";
 
 
 
@@ -57,6 +58,7 @@ function Routing() {
                     <Route path="/pre" element={<PreProject/>}/>
                     <Route path="/test" element={<Test/>}/>
                     <Route path="/home" element={<Home/>}/>
+                    <Route path="/exple" element={<Project_management/>}/>
                     
 
 

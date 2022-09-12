@@ -30,6 +30,7 @@ const Test = () => {
         <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
         <Button className="addbtn"> <a href="/pro" className='btns'>Pro </a></Button>
         <Button className="addbtn"> <a href="/pre" className='btns'>Pre </a></Button>
+        <hr/>
         <Table>
           <thead>
             <tr>
