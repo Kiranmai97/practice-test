@@ -1,31 +1,21 @@
 import React, { useState } from 'react'
 import { Table, Button } from 'react-bootstrap';
+import { useSelector,useDispatch } from 'react-redux';
+import Editmodal from './editmodal';
 
 const Test = () => {
-  const [state, setState] = useState({
-    user: [{
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'TEST'
-    },
-    {
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'TEST'
-    },
-    {
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'TEST'
-    }]
-  })
+  
+  let dataredux = useSelector((state) => state.usersList);
+  let testlist = dataredux.filter((each) => each.environment === "TEST")
+  console.log("user", dataredux);
+
+
+  const [state, setState] = useState(true);
+  const dispatch = useDispatch();
   return (
     <div>
       <h4 className='h4'>Project Management</h4>
-      <div className='homePage'>
+      <div className='homePage' >
         <Button className="addbtn"> <a href="/add" className='btns'>Add </a></Button>
         <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
         <Button className="addbtn"> <a href="/pro" className='btns'>Pro </a></Button>
@@ -43,14 +33,14 @@ const Test = () => {
           </thead>
           <tbody>
             {
-              state.user.map((each, index) => {
+              testlist.map((each, index) => {
                 return (
                   <tr key={index}>
                     <td>{each.title}</td>
                     <td>{each.releaseDate}</td>
                     <td>{each.status}</td>
                     <td>{each.environment}</td>
-                    <td><Button>Edit</Button></td>
+                    <td><Editmodal>Edit</Editmodal></td>
 
                   </tr>
                 )

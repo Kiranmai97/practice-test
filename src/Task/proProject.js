@@ -1,27 +1,17 @@
 import React, { useState } from 'react'
 import { Table, Button  } from 'react-bootstrap';
+import Editmodal from './editmodal';
+import { useDispatch,useSelector } from 'react-redux';
 
 const ProProject = () => {
-  const [state, setState] = useState({
-    user: [{
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'PRO'
-    },
-    {
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'PRO'
-    },
-    {
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'PRO'
-    }]
-  })
+  let dataredux = useSelector((state) => state.usersList);
+  let list = dataredux.filter((each)=>each.environment ==="PRO")
+  console.log("user", dataredux);
+
+  
+  const [state, setState] = useState(true);
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h4 className='h4'>Project Management</h4>
@@ -45,14 +35,14 @@ const ProProject = () => {
           </thead>
           <tbody>
             {
-              state.user.map((each, index) => {
+              list.map((each, index) => {
                 return (
                   <tr key={index}>
                     <td>{each.title}</td>
                     <td>{each.releaseDate}</td>
                     <td>{each.status}</td>
                     <td>{each.environment}</td>
-                    <td><Button>Edit</Button></td>
+                    <td><Editmodal>Edit</Editmodal></td>
 
                   </tr>
                 )

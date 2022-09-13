@@ -11,7 +11,7 @@ h4 {
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 93vh;
     width: 99%;
 
 }
@@ -70,7 +70,7 @@ select {
     height: 100vh;
     width: 100%;
 }
-
+/* 
 @media screen and (min-width:1024px) {
     h4 {
         font-size: 20px !important;
@@ -80,7 +80,7 @@ select {
     .project {
         border-radius: 15px !important;
         height: 15vh !important;
-        /* position: relative; */
+        // position: relative; 
     }
 
     .abs {
@@ -144,4 +144,4 @@ select {
         left: 45%;
         top: 30%;
     }
-}
+} */

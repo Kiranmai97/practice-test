@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux/es/exports';
+import Store from '../src/Task//redux/store';
 import './index.css';
-// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Routing from './Routing/routing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={Store}>
     <Routing />
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
