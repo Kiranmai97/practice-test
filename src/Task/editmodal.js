@@ -45,7 +45,8 @@ setDetails({...details, [e.target.name]: e.target.value})
             <div class="modal-body">
 
 
-              <div className='homePage' >
+              <div className='homePage'      >
+                <div height= '20%'></div>
                 <div className='home'>
                   <label>Title</label>
                   <div><input type="text" name='title' className='input' onChange={handleAdd} /></div>
