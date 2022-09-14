@@ -12,7 +12,7 @@ const TaskAdd = () => {
         environment: '',
     })
 
-    const dataredux = useSelector((state) => state.usersList)
+    const list = useSelector((state) => state.usersList)
     const disablePastDate = () => {
         const today = new Date();
         const dd = String(today.getDate() + 1).padStart(2, "0");
@@ -32,12 +32,15 @@ const TaskAdd = () => {
     const dispatch = useDispatch();
     const addDetails = (e) => {
         e.preventDefault();
-        dataredux.push(details)
+        const lastId = list[list.length > 0 ? list.length - 1 : 0]?.id ? list[list.length - 1].id : 0;
+        list.push(details)
         
         if (details.environment == "pre") {
             dispatch({
                 type: "prePage",
                 payload: details,
+                id:lastId+1,
+                callback:{}
                 
             })
         }
@@ -56,7 +59,7 @@ const TaskAdd = () => {
         if(details.environment==="pre") return  navigate("/pre")
         if(details.environment==="pro") return  navigate("/pro")
         if(details.environment==="test") return  navigate("/test")
-        console.log("data", dataredux)
+        console.log("data", list)
     }
 
 

@@ -22,13 +22,7 @@ const initialState = {
       status: 'onProgress',
       environment:'TEST'
     }
-
-   
-
-
   ]
-
-
 }
 // console.log("reducer")
 export default function AuthReducer(state = initialState, action = null) {

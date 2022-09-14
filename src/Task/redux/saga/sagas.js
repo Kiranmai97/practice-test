@@ -1,9 +1,22 @@
 import { put,takeEvery } from "redux-saga/effects"; 
+import axios from "axios";
 
-function* prePage({ payload }) {
+
+function* prePage({ payload, callback }) {
     console.log(" saga Pre" );
     yield put({type:"pre",payload });
     console.log("precomplete",payload)
+    try {
+      const url = `http://192.168.1.49:8091/home`;
+      const res = yield axios.post(url, payload);
+    
+      yield put({ type: "pre", data: res.data });
+      console.log("result", res.data);
+    
+    } catch (e) {
+      callback(e.response.data)
+    
+    }
   }
   function* proPage({ payload}){
     console.log(" saga pro");
