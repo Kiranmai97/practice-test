@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Test from '../Images/test.jpeg'
+import Test from "../../Images/test.jpeg"
 // import "./design.css";
 import { Col, Row } from 'react-bootstrap';
 

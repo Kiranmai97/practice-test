@@ -10,7 +10,7 @@ const Editmodal = () => {
     environment: '',
   })
   const handleAdd = (e) => {
-setDetails({...details, [e.target.name]: e.target.value})
+    setDetails({ ...details, [e.target.name]: e.target.value })
   }
   const disablePastDate = () => {
     const today = new Date();
@@ -24,55 +24,55 @@ setDetails({...details, [e.target.name]: e.target.value})
   const dispatch = useDispatch();
   const handleSave = () => {
     dispatch({
-      type: "EditDetails", 
+      type: "EditDetails",
       payload: details,
     })
   }
   return (
     <div>
-      <Button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <Button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         EDIT
       </Button>
 
       {/* <!-- Modal --> */}
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Edit Details</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
 
 
-              <div className='homePage'      >
-                <div height= '20%'></div>
-                <div className='home'>
+              <div classNameName='homePage'      >
+                <div height='20%'></div>
+                <div classNameName='home'>
                   <label>Title</label>
-                  <div><input type="text" name='title' className='input' onChange={handleAdd} /></div>
+                  <div><input type="text" name='title' classNameName='input' onChange={handleAdd} /></div>
                 </div>
-                <div className='date'>
+                <div classNameName='date'>
                   <label>Release Date</label>
-                  <div><input type="date" name='releaseDate' className='input' onChange={handleAdd} min={disablePastDate()} /></div>
+                  <div><input type="date" name='releaseDate' classNameName='input' onChange={handleAdd} min={disablePastDate()} /></div>
                 </div>
 
-                <div className='home'>
+                <div classNameName='home'>
                   <label>Description</label>
-                  <div><textarea type="text" name='description' className='description' onChange={handleAdd} /></div>
+                  <div><textarea type="text" name='description' classNameName='description' onChange={handleAdd} /></div>
                 </div>
-                <div className='home'>
+                <div classNameName='home'>
                   <label>Status</label>
                   <div>
-                    <select name='status' className='select' onChange={handleAdd} >
+                    <select name='status' classNameName='select' onChange={handleAdd} >
                       <option value='' selected="true" name='status' disabled="disabled">--Select--</option>
                       {/* selected={true} */}
                       <option name='status' value='completed'> Completed  </option>
                       <option name='status' value='onprogress'> OnProgress </option>
                     </select></div>
                 </div>
-                <div className='home'>
+                <div classNameName='home'>
                   <label>Environment</label>
-                  <div> <select name='environment' className='select' onChange={handleAdd}>
+                  <div> <select name='environment' classNameName='select' onChange={handleAdd}>
                     <option value='' selected="true" disabled="disabled" >--Select--</option>
                     <option value='pre'> PRE </option>
                     <option value='pro'> PRO </option>
@@ -81,9 +81,9 @@ setDetails({...details, [e.target.name]: e.target.value})
                 </div>
 
 
-                <div class="modal-footer">
-                  <Button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</Button>
-                  <Button type="button" class="btn btn-primary" onClick={handleSave}>Save changes</Button>
+                <div className="modal-footer">
+                  <Button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</Button>
+                  <Button type="button" className="btn btn-primary" onClick={handleSave}>Save changes</Button>
                 </div>
               </div>
             </div>

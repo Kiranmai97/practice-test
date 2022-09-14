@@ -1,27 +1,25 @@
 import React, { useState } from 'react'
-import { Table, Button } from 'react-bootstrap';
-import { useSelector,useDispatch } from 'react-redux';
-import Editmodal from './editmodal';
+import { Table, Button  } from 'react-bootstrap';
+import Editmodal from '../editmodal';
+import { useDispatch,useSelector } from 'react-redux';
 
-const Test = () => {
-  
+const ProProject = () => {
   let dataredux = useSelector((state) => state.usersList);
-  let testlist = dataredux.filter((each) => each.environment === "TEST")
+  let list = dataredux.filter((each)=>each.environment ==="PRO")
   console.log("user", dataredux);
 
-
-  const [state, setState] = useState(true);
-  const dispatch = useDispatch();
   return (
     <div>
       <h4 className='h4'>Project Management</h4>
-      <div className='homePage' >
-        <Button className="addbtn"> <a href="/add" className='btns'>Add </a></Button>
-        <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
-        <Button className="addbtn"> <a href="/pro" className='btns'>Pro </a></Button>
-        <Button className="addbtn"> <a href="/pre" className='btns'>Pre </a></Button>
-        <hr/>
-        <Table>
+      <div className='homePage'>
+    
+      
+      <Button className="addbtn"> <a href="/add" className='btns'>Add </a></Button>
+      <Button className="addbtn"> <a href="/home" className='btns'>Home </a></Button>
+      <Button className="addbtn"> <a href="/pre" className='btns'>Pre </a></Button>
+      <Button className="addbtn"> <a href="/test" className='btns'>Test </a></Button>
+      <hr/>
+      <Table>
           <thead>
             <tr>
               <th>Title</th>
@@ -33,7 +31,7 @@ const Test = () => {
           </thead>
           <tbody>
             {
-              testlist.map((each, index) => {
+              list.map((each, index) => {
                 return (
                   <tr key={index}>
                     <td>{each.title}</td>
@@ -50,9 +48,10 @@ const Test = () => {
 
           </tbody>
         </Table>
+        </div>
       </div>
-    </div>
+ 
   )
 }
 
-export default Test
+export default ProProject

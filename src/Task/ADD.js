@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import "./design.css";
 
 
@@ -19,20 +20,54 @@ const ADD = () => {
     setDetails({ ...details, details: details });
     console.log("detail", details)
   }
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  let dataredux = useSelector((state) => state.usersList);
-  const addDetails = (e) => {
-    e.preventDefault();
-    const lastId = dataredux[dataredux.length > 0 ? dataredux.length - 1 : 0]?.id ? dataredux[dataredux.length - 1].id : 0;
-    dispatch({
-      type: "AddDetails",
-      payload: {
-        details,
-        id:lastId+1,
-      },
-      callback: (user) => { },
-    });
-  }
+  // let dataredux = useSelector((state) => state.usersList);
+  // const addDetails = (e) => {
+  //   e.preventDefault();
+  //   const lastId = dataredux[dataredux.length > 0 ? dataredux.length - 1 : 0]?.id ? dataredux[dataredux.length - 1].id : 0;
+  //   dispatch({
+  //     type: "AddDetails",
+  //     payload: {
+  //       details,
+  //       id:lastId+1,
+  //     },
+  //     callback: (user) => { },
+  //   });
+  // }
+  const addDetails=()=>{
+       
+    if(details.environment==="PRE"){
+        console.log("prePage")
+        dispatch({
+            type:"pre",
+            payload: details
+        })  
+        console.log("prePage_completed") 
+    }
+    if(details.environment==="TEST"){
+        console.log("testPage") 
+        dispatch({
+            type:"test",
+            payload: details
+        })  
+        console.log("testPage_completed") 
+    }
+    if(details.environment==="PRO"){
+        console.log("proPage") 
+        dispatch({
+            type:"pro",
+            payload: details
+        })  
+        console.log("proPage_completed") 
+    }
+ 
+if(details.environment==="PRE") return  navigate("/pre")
+if(details.environment==="TEST") return navigate("/test")
+if(details.environment==="PRO") return  navigate("/pro")
+
+}
+// console.log("selector",selector)
 
 
   console.log("adding into table", details)

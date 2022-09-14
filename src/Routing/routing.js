@@ -19,12 +19,14 @@ import Hooks from "../components/updating";
 import Sample from "../components/sample";
 import Propsuser from "../components/propsuser";
 import TextUpper from "../components/textupper";
-import ADD from "../Task/ADD";
-import ProProject from "../Task/proProject";
-import PreProject from "../Task/PreProject";
-import Test from "../Task/test";
-import Home from "../Task/Home";
 import Project_management from "../Task/example";
+import TaskAdd from "../Task/components/TaskAdd";
+import ProProject from "../Task/components/proProject";
+import PreProject from '../Task/components/PreProject';
+import Test from '../Task/components/test';
+import Home from '../Task/components/Home';
+import ADD from "../Task/ADD";
+
 
 
 
@@ -53,12 +55,13 @@ function Routing() {
                     <Route path="/sample" element={<Sample />} />
                     <Route path="/props" element={<Propsuser/>}/>
                     <Route path="/text" element={<TextUpper/>}/>
-                    <Route path="/add" element={<ADD/>}/>
+                    <Route path="/add" element={<TaskAdd/>}/>
                     <Route path="/pro" element={<ProProject/>}/>
                     <Route path="/pre" element={<PreProject/>}/>
                     <Route path="/test" element={<Test/>}/>
                     <Route path="/home" element={<Home/>}/>
                     <Route path="/exple" element={<Project_management/>}/>
+                    <Route path="adding" element={<ADD/>}/>
                     
 
 
@@ -67,4 +70,5 @@ function Routing() {
         </div>
     )
 }
+
 export default Routing;

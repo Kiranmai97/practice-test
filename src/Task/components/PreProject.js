@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Table, Button } from 'react-bootstrap';
-import Editmodal from './editmodal';
+import Editmodal from '../editmodal';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -24,7 +24,7 @@ const PreProject = () => {
 
         <div>
           <hr />
-          <Table>
+          <Table >
             <thead>
               <tr>
                 <th>Title</th>

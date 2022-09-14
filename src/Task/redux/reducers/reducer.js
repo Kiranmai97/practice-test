@@ -7,7 +7,7 @@ const initialState = {
       title: 'Java',
       releaseDate: '06-16-2022',
       status: 'onProgress',
-      environment: 'PRO',
+      environment: 'PRE',
     },
 
     {
@@ -16,31 +16,14 @@ const initialState = {
       status: 'onProgress',
       environment: 'PRO'
     },
+    {
+      title: 'react',
+      releaseDate: '06-16-2022',
+      status: 'onProgress',
+      environment:'TEST'
+    }
 
-    {
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'PRE',
-    },
-    {
-      title: 'JavaScript',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'PRE'
-    },
-    {
-      title: 'Java',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'TEST',
-    },
-    {
-      title: 'JavaScript',
-      releaseDate: '06-16-2022',
-      status: 'onProgress',
-      environment: 'TEST'
-    },
+   
 
 
   ]
@@ -53,11 +36,22 @@ export default function AuthReducer(state = initialState, action = null) {
     state = initialState;
   }
   switch (action.type) {
-    case "AddDetails": {
-      console.log("addedlist", action)
-      // const {token}=action
-      // localStorage.setItem("token",token);
-      localStorage.setItem("user", JSON.stringify(action));
+    case "prePage": {
+      console.log("prelist", action)
+      return {
+        ...state,
+        usersList: [...state.usersList, action.payload],
+      }
+    }
+    case "proPage":{
+      console.log("prolist",action)
+      return {
+        ...state,
+        usersList: [...state.usersList, action.payload],
+      }
+    }
+    case "testPage": {
+      console.log("testlist",action)
       return {
         ...state,
         usersList: [...state.usersList, action.payload],
@@ -70,7 +64,7 @@ export default function AuthReducer(state = initialState, action = null) {
       console.log("editing", action.payload)
       return {
         ...state,
-        usersList: [...state.usersList, action.payload],
+        usersList: action.payload
       }
     }
 
