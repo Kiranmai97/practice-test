@@ -13,7 +13,7 @@ export default function AuthReducer(state = initialState, action = null) {
     state = initialState;
   }
   switch (action.type) {
-    case "prePage": {
+    case "pre": {
       return {
         ...state,
         usersPreList: [...state.usersPreList, state.usersPreList=action.payload],

@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table, Button } from 'react-bootstrap';
 import Editmodal from '../editmodal';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 const PreProject = () => {
-
-  let dataredux = useSelector((state) => state.usersPreList);
-  console.log("user", dataredux);
+  const [state, setState] = useState({
+    dataredux: ''
+  })
+  const dispatch = useDispatch()
+  const getData = () => {
+    dispatch({
+      type: "prePage",
+      
+    })
+    // fetch('http://192.168.1.49:8091/home')
+    //   .then((response) => response.json())
+    //   .then((data) => setState({ ...state, dataredux: data }));
+  }
+  useEffect(() => {
+    getData()
+  }, [])
+  console.log("state", state.dataredux);
+  // let dataredux = useSelector((state) => state.usersPreList);
+  // console.log("user", dataredux);
   return (
     <div>
       <h4 className='h4'>Project Management</h4>
@@ -31,14 +47,14 @@ const PreProject = () => {
             </thead>
             <tbody>
               {
-                dataredux.map((each, index) => {
+                state.dataredux && state.dataredux.map((each, index) => {
                   return (
                     <tr key={index}>
                       <td>{each.title}</td>
                       <td>{each.releaseDate}</td>
                       <td>{each.status}</td>
                       <td>{each.environment}</td>
-                      <td><Editmodal/></td>
+                      <td><Editmodal /></td>
 
                     </tr>
                   )
