@@ -5,13 +5,9 @@ import Editmodal from '../editmodal';
 
 const Test = () => {
   
-  let dataredux = useSelector((state) => state.usersList);
-  let testlist = dataredux.filter((each) => each.environment === "TEST")
+  let dataredux = useSelector((state) => state.usersTestList);
   console.log("user", dataredux);
 
-
-  const [state, setState] = useState(true);
-  const dispatch = useDispatch();
   return (
     <div>
       <h4 className='h4'>Project Management</h4>
@@ -33,14 +29,14 @@ const Test = () => {
           </thead>
           <tbody>
             {
-              testlist.map((each, index) => {
+              dataredux.map((each, index) => {
                 return (
                   <tr key={index}>
                     <td>{each.title}</td>
                     <td>{each.releaseDate}</td>
                     <td>{each.status}</td>
                     <td>{each.environment}</td>
-                    <td><Editmodal>Edit</Editmodal></td>
+                    <td><Editmodal/></td>
 
                   </tr>
                 )

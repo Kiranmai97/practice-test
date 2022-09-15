@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Table, Button  } from 'react-bootstrap';
 import Editmodal from '../editmodal';
+
 import { useDispatch,useSelector } from 'react-redux';
 
 const ProProject = () => {
-  let dataredux = useSelector((state) => state.usersList);
-  let list = dataredux.filter((each)=>each.environment ==="PRO")
+  let dataredux = useSelector((state) => state.usersProList);
+
   console.log("user", dataredux);
 
   return (
@@ -31,14 +32,14 @@ const ProProject = () => {
           </thead>
           <tbody>
             {
-              list.map((each, index) => {
+              dataredux.map((each, index) => {
                 return (
                   <tr key={index}>
                     <td>{each.title}</td>
                     <td>{each.releaseDate}</td>
                     <td>{each.status}</td>
                     <td>{each.environment}</td>
-                    <td><Editmodal>Edit</Editmodal></td>
+                    <td><Editmodal/></td>
 
                   </tr>
                 )

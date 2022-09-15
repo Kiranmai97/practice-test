@@ -45,34 +45,27 @@ const Editmodal = () => {
             <div className="modal-body">
 
 
-              <div classNameName='homePage'      >
-                <div height='20%'></div>
-                <div classNameName='home'>
-                  <label>Title</label>
-                  <div><input type="text" name='title' classNameName='input' onChange={handleAdd} /></div>
-                </div>
-                <div classNameName='date'>
+              {/* <div className='homePage'      > */}
+               
+                <div className='date'>
                   <label>Release Date</label>
-                  <div><input type="date" name='releaseDate' classNameName='input' onChange={handleAdd} min={disablePastDate()} /></div>
+                  <div><input type="date" name='releaseDate' className='input' onChange={handleAdd} min={disablePastDate()} /></div>
                 </div>
 
-                <div classNameName='home'>
-                  <label>Description</label>
-                  <div><textarea type="text" name='description' classNameName='description' onChange={handleAdd} /></div>
-                </div>
-                <div classNameName='home'>
+               
+                <div className='home'>
                   <label>Status</label>
                   <div>
-                    <select name='status' classNameName='select' onChange={handleAdd} >
+                    <select name='status' className='select' onChange={handleAdd} >
                       <option value='' selected="true" name='status' disabled="disabled">--Select--</option>
                       {/* selected={true} */}
                       <option name='status' value='completed'> Completed  </option>
                       <option name='status' value='onprogress'> OnProgress </option>
                     </select></div>
                 </div>
-                <div classNameName='home'>
+                <div className='home'>
                   <label>Environment</label>
-                  <div> <select name='environment' classNameName='select' onChange={handleAdd}>
+                  <div> <select name='environment' className='select' onChange={handleAdd}>
                     <option value='' selected="true" disabled="disabled" >--Select--</option>
                     <option value='pre'> PRE </option>
                     <option value='pro'> PRO </option>
@@ -90,7 +83,7 @@ const Editmodal = () => {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
 
 
   )

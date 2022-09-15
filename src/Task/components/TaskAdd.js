@@ -12,6 +12,9 @@ const TaskAdd = () => {
         environment: '',
     })
 
+    const [state, setState] = useState({
+        user: [],
+    })
     const list = useSelector((state) => state.usersList)
     const disablePastDate = () => {
         const today = new Date();
@@ -20,45 +23,40 @@ const TaskAdd = () => {
         const yyyy = today.getFullYear();
         return yyyy + "-" + mm + "-" + dd;
     };
-    
+
     const handleInput = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-    details[name] = value;
-    setDetails({ ...details, details: details });
-    console.log("detail", details)
+        setDetails({ ...details, [e.target.name]: e.target.value });
+        console.log("detail", details)
     }
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const addDetails = (e) => {
         e.preventDefault();
-        const lastId = list[list.length > 0 ? list.length - 1 : 0]?.id ? list[list.length - 1].id : 0;
-        list.push(details)
-        
-        if (details.environment == "pre") {
+        if (details.environment === "pre") {
             dispatch({
                 type: "prePage",
                 payload: details,
-                id:lastId+1,
-                callback:{}
-                
             })
+            navigate("pre")
         }
-        else if(details.environment == "pro") {
+        else if (details.environment == "pro") {
             dispatch({
-                type:"proPage",
+                type: "proPage",
                 payload: details,
             })
+            navigate("pro")
         }
-        else if(details.environment =="test") {
+        else if (details.environment == "test") {
             dispatch({
-                type:"testPage",
-                payload:details,
+                type: "testPage",
+                payload: details,
             })
+            navigate("test")
         }
-        if(details.environment==="pre") return  navigate("/pre")
-        if(details.environment==="pro") return  navigate("/pro")
-        if(details.environment==="test") return  navigate("/test")
+       
+        if (details.environment === "pre") return navigate("/pre")
+        if (details.environment === "pro") return navigate("/pro")
+        if (details.environment === "test") return navigate("/test")
         console.log("data", list)
     }
 
@@ -86,27 +84,27 @@ const TaskAdd = () => {
                 <div className='home'>
                     <label>Status</label>
                     <div>
-                        <select value={'DEFAULT'} name='status' className='select' onChange={handleInput} >
-                            {/* <option value="DEFAULT" name='status'  disabled="disabled">--Select--</option> */}
-
-                            <option value='' selected={true} disabled="disabled">--Select--</option> 
-                             {/* selected={true} */}
-                            <option name='status' value='completed'> Completed  </option>
+                  
+                           
+                            <select name='status' className='select' onChange={handleInput}>
+                            <option value='' selected="true" disabled="disabled">--Select--</option>
                             <option name='status' value='onprogress'> OnProgress </option>
-                        </select></div>
+                            <option name='status' value='completed'> Completed  </option>
+                            </select>
+                        </div>
                 </div>
                 <div className='home'>
                     <label>Environment</label>
                     <div> <select name='environment' className='select' onChange={handleInput}>
-                        <option value='' selected={true} disabled="disabled" >--Select--</option>
-                        <option value='pre'> PRE </option>
-                        <option value='pro'> PRO </option>
-                        <option value='test'> TEST </option>
+                        <option value='' selected="true" >--Select--</option>
+                        <option name='environment' value="pre"> PRE </option>
+                        <option name='environment' value="pro"> PRO </option>
+                        <option name='environment' value="test"> TEST </option>
                     </select></div>
                 </div>
 
                 <div>
-                    <Button className="addbtn"> <a href="/add" className='btns' onClick={addDetails}>Add </a></Button></div>
+                    <Button className="addbtn" onClick={addDetails} >  Add </Button></div>
             </div>
         </div>
     )

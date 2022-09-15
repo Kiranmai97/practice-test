@@ -6,13 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const PreProject = () => {
 
-  let dataredux = useSelector((state) => state.usersList);
-  let prelist = dataredux.filter((each) => each.environment === "PRE")
+  let dataredux = useSelector((state) => state.usersPreList);
   console.log("user", dataredux);
-
-
-  const [state, setState] = useState(true);
-  const dispatch = useDispatch();
   return (
     <div>
       <h4 className='h4'>Project Management</h4>
@@ -36,14 +31,14 @@ const PreProject = () => {
             </thead>
             <tbody>
               {
-                prelist.map((each, index) => {
+                dataredux.map((each, index) => {
                   return (
                     <tr key={index}>
                       <td>{each.title}</td>
                       <td>{each.releaseDate}</td>
                       <td>{each.status}</td>
                       <td>{each.environment}</td>
-                      <td><Editmodal>Edit</Editmodal></td>
+                      <td><Editmodal/></td>
 
                     </tr>
                   )
