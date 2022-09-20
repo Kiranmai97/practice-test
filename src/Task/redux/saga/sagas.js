@@ -20,28 +20,14 @@ import createSagaMiddleware from 'redux-saga'
 // }
 
 
-function* prePage() {
-  try {
-    const url = "http://192.168.1.49:8091/home";
-    const res = axios.get("http://192.168.1.49:8091/home");
-    yield put({ type: "pre" });
-    console.log("result", res.data);
-    fetch('http://192.168.1.49:8091/home')
-    .then((response) => response.json())
-    .then((data) => console.log("data",data));
-    console.log(" saga Pre");
 
-  } catch (e) {
-    // callback(e.response.data)
 
-  }
+
+function* prePage({ payload }) {
+  console.log(" saga pro");
+  yield put({ type: "pre", payload });
+  console.log("precomplete", payload)
 }
-
-// function* prePage({ payload }) {
-//   console.log(" saga pro");
-//   yield put({ type: "pre", payload });
-//   console.log("precomplete", payload)
-// }
 function* proPage({ payload }) {
   console.log(" saga pro");
   yield put({ type: "pro", payload });
