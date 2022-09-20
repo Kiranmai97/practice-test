@@ -10,8 +10,8 @@ const Home = () => {
 
     return (
         <>
-            <div className="heading-wrapper">
-            <h4 className='h4 gridwrapper'>Project Management</h4>
+            <div className="heading">
+            <h4 className='h4 '>Project Management</h4>
             </div>
             <div className='homePage'>
                 <Row className='center'>

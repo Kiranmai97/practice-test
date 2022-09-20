@@ -22,10 +22,10 @@ import createSagaMiddleware from 'redux-saga'
 
 // function* prePage() {
 //   try {
-    // const url = "http://192.168.1.49:8091/home";
-    // const res = axios.get("http://192.168.1.49:8091/home");
-    // yield put({ type: "pre" });
-    // console.log("result", res.data);
+//     const url = "http://192.168.1.49:8091/home";
+//     const res = axios.get("http://192.168.1.49:8091/home");
+//     yield put({ type: "pre" });
+//     console.log("result", res.data);
 //     fetch('http://192.168.1.49:8091/home')
 //     .then((response) => response.json())
 //     .then((data) => console.log("data",data));
