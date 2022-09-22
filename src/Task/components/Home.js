@@ -16,18 +16,18 @@ const Home = () => {
             <div className='homePage'>
                 <Row className='center'>
                     <Col lg={2} md={2} sm={0} />
-                    <Col md={2} sm={12} className='rel'onClick={()=>{navigate("/pre")}}>
+                    <Col md={2} sm={12} className='rel imgsz'onClick={()=>{navigate("/pre")}}>
                         <h6 className='abs'>Pre</h6>
-                        <img src={Test} className='project'></img></Col>
+                        <img src={Test} className='project'/></Col>
                     <Col md={2} sm={12} className='rel' onClick={()=>{navigate("/pre")}}>
                         <h6 className='abs'>Pro</h6>
-                       <img src={Test} className='project'></img></Col>
+                       <img src={Test} className='project'/></Col>
                     <Col md={2} sm={12} className='rel' onClick={()=>{navigate("/pre")}}>
                         <h6 className='abs'>Test</h6>
-                       <img src={Test} className='project'></img></Col>
+                       <img src={Test} className='project'/></Col>
                     <Col md={2} sm={12} className='rel' onClick={()=>{navigate("/pre")}}>
                         <h6 className='abs'>Add</h6>
-                        <img src={Test} className='project'></img>
+                        <img src={Test} className='project'/>
                     </Col>
                     <Col md={2} sm={0} />
                 </Row>
