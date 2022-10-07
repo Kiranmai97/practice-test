@@ -83,8 +83,8 @@ select {
 .modalbody {
     height: 20% !important;
 }
-.img:hover{
-    border-color: 2px solid blue;
+img:hover{
+    border-color: 2px solid blue !important;
 }
 
 /* mobile view */

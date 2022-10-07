@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux/es/exports';
 import Store from '../src/Task//redux/store';
 import './index.css';
+import KiranMaiRoutes from './KiranMaiRoutes';
 import reportWebVitals from './reportWebVitals';
 import Routing from './Routing/routing';
 
@@ -10,6 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={Store}>
     <Routing />
+    <KiranMaiRoutes/>
   </Provider>
 );
 

@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AxiosFetch from "./Kiranmai/axios_async";
-import Displaybutton from "./Kiranmai/buttonDisplay";
-import ChartBox from "./Kiranmai/chart";
-import Text from "./Kiranmai/displayText";
-import ButtonDrop from "./Kiranmai/dropDown";
-import ConditionalRendering from "./Kiranmai/navbar";
-import Page from "./Kiranmai/pagination";
-import Password from "./Kiranmai/password";
-import TableData from "./Kiranmai/tableData";
-import Timer from "./Kiranmai/Timer";
+import AxiosFetch from "./components/axios_async";
+import Displaybutton from "./components/buttonDisplay";
+import ChartBox from './components/chart';
+import Text from "./components/displayText";
+import ButtonDrop from "./components/dropDown";
+import ConditionalRendering from "./components/navbar";
+import Page from "./components/pagination";
+import Password from "./components/password";
+import TableData from "./components/tableData";
+import Timer from "./components/Timer";
 
 
 
